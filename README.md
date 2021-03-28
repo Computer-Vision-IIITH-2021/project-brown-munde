@@ -29,7 +29,7 @@
 ### RUNNING  KLT
 
     cd src
-    python3 main.py 
+    jupyter notebook reconstruct.ipynb 
 
 
 ### Dataset
