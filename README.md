@@ -43,8 +43,10 @@
 
 - [Download](https://umich.box.com/shared/static/bnqgx0an4v1b0ioq80sejb7rfiuku8iy.zip) the dataset & store in `datasets/`
 
-- The custom dataset is already available in `datasets\`
+- The custom dataset is already available in `datasets/`
 
 ### Results 
+#### Optical Flow
 ![Optical FLow](./output/optical_flow.png)
+#### Dense Map
 ![Dense Map](./output/final.png)
