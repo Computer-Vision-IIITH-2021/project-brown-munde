@@ -1,0 +1,107 @@
+Determining if the function sgemm_ exists failed with the following output:
+Change Dir: /home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_fb7f1/fast && /usr/bin/make  -f CMakeFiles/cmTC_fb7f1.dir/build.make CMakeFiles/cmTC_fb7f1.dir/build
+make[1]: Entering directory '/home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fb7f1.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=sgemm_ -o CMakeFiles/cmTC_fb7f1.dir/CheckFunctionExists.c.o -c /home/nsk06/anaconda3/lib/python3.7/site-packages/cmake/data/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_fb7f1
+/home/nsk06/anaconda3/lib/python3.7/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fb7f1.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=sgemm_ CMakeFiles/cmTC_fb7f1.dir/CheckFunctionExists.c.o -o cmTC_fb7f1 
+CMakeFiles/cmTC_fb7f1.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `sgemm_'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_fb7f1.dir/build.make:105: recipe for target 'cmTC_fb7f1' failed
+make[1]: *** [cmTC_fb7f1] Error 1
+make[1]: Leaving directory '/home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp'
+Makefile:140: recipe for target 'cmTC_fb7f1/fast' failed
+make: *** [cmTC_fb7f1/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_4c90a/fast && /usr/bin/make  -f CMakeFiles/cmTC_4c90a.dir/build.make CMakeFiles/cmTC_4c90a.dir/build
+make[1]: Entering directory '/home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4c90a.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD -o CMakeFiles/cmTC_4c90a.dir/src.c.o -c "/home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTC_4c90a
+/home/nsk06/anaconda3/lib/python3.7/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c90a.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD CMakeFiles/cmTC_4c90a.dir/src.c.o -o cmTC_4c90a 
+CMakeFiles/cmTC_4c90a.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x56): undefined reference to `pthread_cancel'
+src.c:(.text+0x67): undefined reference to `pthread_join'
+src.c:(.text+0x7b): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_4c90a.dir/build.make:105: recipe for target 'cmTC_4c90a' failed
+make[1]: *** [cmTC_4c90a] Error 1
+make[1]: Leaving directory '/home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp'
+Makefile:140: recipe for target 'cmTC_4c90a/fast' failed
+make: *** [cmTC_4c90a/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_7b2dc/fast && /usr/bin/make  -f CMakeFiles/cmTC_7b2dc.dir/build.make CMakeFiles/cmTC_7b2dc.dir/build
+make[1]: Entering directory '/home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7b2dc.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_7b2dc.dir/CheckFunctionExists.c.o -c /home/nsk06/anaconda3/lib/python3.7/site-packages/cmake/data/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7b2dc
+/home/nsk06/anaconda3/lib/python3.7/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b2dc.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_7b2dc.dir/CheckFunctionExists.c.o -o cmTC_7b2dc  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7b2dc.dir/build.make:105: recipe for target 'cmTC_7b2dc' failed
+make[1]: *** [cmTC_7b2dc] Error 1
+make[1]: Leaving directory '/home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp'
+Makefile:140: recipe for target 'cmTC_7b2dc/fast' failed
+make: *** [cmTC_7b2dc/fast] Error 2
+
+
+
+Determining if the function cheev_ exists failed with the following output:
+Change Dir: /home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_0d627/fast && /usr/bin/make  -f CMakeFiles/cmTC_0d627.dir/build.make CMakeFiles/cmTC_0d627.dir/build
+make[1]: Entering directory '/home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0d627.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=cheev_ -o CMakeFiles/cmTC_0d627.dir/CheckFunctionExists.c.o -c /home/nsk06/anaconda3/lib/python3.7/site-packages/cmake/data/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0d627
+/home/nsk06/anaconda3/lib/python3.7/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d627.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=cheev_ CMakeFiles/cmTC_0d627.dir/CheckFunctionExists.c.o -o cmTC_0d627  /usr/lib/x86_64-linux-gnu/libblas.so /usr/lib/x86_64-linux-gnu/libf77blas.so /usr/lib/x86_64-linux-gnu/libatlas.so -lpthread -lm -ldl 
+CMakeFiles/cmTC_0d627.dir/CheckFunctionExists.c.o: In function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `cheev_'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_0d627.dir/build.make:108: recipe for target 'cmTC_0d627' failed
+make[1]: *** [cmTC_0d627] Error 1
+make[1]: Leaving directory '/home/nsk06/Documents/sem 8/CV/project/project-brown-munde/ceres-bin/CMakeFiles/CMakeTmp'
+Makefile:140: recipe for target 'cmTC_0d627/fast' failed
+make: *** [cmTC_0d627/fast] Error 2
+
+
+

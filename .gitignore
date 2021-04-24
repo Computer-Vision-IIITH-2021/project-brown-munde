@@ -1,0 +1,4 @@
+*.npz
+ceres-bin/*
+./src/__pycache__/**
+./output/*.npz
