@@ -47,4 +47,4 @@
 
 ### Results 
 ![Optical FLow](./output/optical_flow.png)
-![Dense Map] (./output/cost_volume_100__(20, 20, 20)__depth_map.png)
+![Dense Map](./output/cost_volume_100__(20, 20, 20)__depth_map.png)
